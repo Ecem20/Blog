@@ -1,0 +1,37 @@
+﻿@model CaseProject.Models.Blog
+<form asp-action="Create" method="post" class="mt-4">
+    <div asp-validation-summary="All" class="text-black"></div>
+    <input type="hidden" asp-for="bloggerName" />
+    <input type="hidden" asp-for="bloggerSurname" />
+    <input type="hidden" asp-for="AuthorId" />
+
+    <div class="form-group">
+        <label for="Category">Kategori</label>
+        <input type="text" asp-for="Category" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Title">Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Tags">Etiketler</label>
+        <input type="text" asp-for="Tags" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Content">İçerik</label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Status">Durum</label>
+        <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<CaseProject.Models.BlogPostStatus>()"></select>
+    </div>
+    <br />
+    <div class="col-4">
+        <input type="submit" value="Oluştur" class="btn btn-danger" />
+    </div>
+    <br />
+    <div class="col-4">
+        <a asp-action="Index" class="btn btn-success">Listeye Dön</a>
+    </div>
+
+</form>
