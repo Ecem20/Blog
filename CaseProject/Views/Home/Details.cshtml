@@ -1,0 +1,12 @@
+﻿@model CaseProject.Models.Blog
+
+<h2>@Model.Title</h2>
+<p>Category: @Model.Category</p>
+<p>Tags: @Model.Tags</p>
+<p>Date: @Model.Date</p>
+<p>Author: @Model.bloggerName @Model.bloggerSurname</p>
+<p>@Model.Content</p>
+
+<div class="col-4">
+    <a asp-action="Index" class="btn btn-success form-control">Blog Yazılarına Dön</a>
+</div>
