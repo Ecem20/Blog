@@ -18,13 +18,13 @@ namespace CaseProject.Controllers
 
         public async Task<IActionResult> Index(int page = 1, int pageSize = 2)
         {
-            int totalPosts = await _db.Blogs.CountAsync(b => b.Status == BlogPostStatus.Yayýnda);
+            int totalPosts = await _db.Blogs.CountAsync(b => b.Status == BlogPostStatus.YAYINDA);
             int totalPages = (int)Math.Ceiling((double)totalPosts / pageSize);
             int skip = (page - 1) * pageSize;
             skip = Math.Max(0, skip);
 
             var publishedPosts = await _db.Blogs
-                .Where(b => b.Status == BlogPostStatus.Yayýnda)
+                .Where(b => b.Status == BlogPostStatus.YAYINDA)
                 .OrderByDescending(b => b.Date)
                 .Skip(skip)
                 .Take(pageSize)

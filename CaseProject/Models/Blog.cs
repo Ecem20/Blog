@@ -21,7 +21,7 @@ namespace CaseProject.Models
 
     public enum BlogPostStatus
     {
-        Yayında,
+        YAYINDA,
         Yayında_Değil
     }
 }
